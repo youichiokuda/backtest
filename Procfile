@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run image.py
+web: sh setup.sh && streamlit run backtest.py
