@@ -57,7 +57,8 @@ st.write(output)
 
 output2=bt.optimize(n1=range(2, 50, 10),n2=range(2, 50, 10), maximize='Equity Final [$]')
 print(output2)
-bt.plot()
+st.plot(bt.plot())
+
 
 st.write("最適化")
 st.write(output2)
