@@ -54,3 +54,12 @@ bt.plot() # 実行結果（グラフ）
 
 st.write("【結果】 最初の所持金　1000000 手数料　0.00495 チャートはHtmlを別途参照ください")
 st.write(output)
+
+output2=bt.optimize(n1=range(2, 50, 10),n2=range(2, 50, 10), maximize='Equity Final [$]')
+print(output2)
+bt.plot()
+
+st.write("【最適化")
+st.write(output2)
+
+
