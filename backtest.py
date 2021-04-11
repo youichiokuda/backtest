@@ -5,6 +5,7 @@ import datetime
 from backtesting import Backtest, Strategy # バックテスト、ストラテジー
 from backtesting.lib import crossover
 from backtesting.test import SMA # SMAインジケータ
+import csv
 
 st.title('単純移動平均戦（SMA）を用いた株の分析')
 
@@ -55,14 +56,23 @@ bt.plot() # 実行結果（グラフ）
 st.write("【結果】 最初の所持金　1000000 手数料　0.00495 チャートはHtmlを別途参照ください")
 st.write(output)
 
+
 output2=bt.optimize(n1=range(2, 50, 10),n2=range(2, 50, 10), maximize='Equity Final [$]')
 print(output2)
-st.plot(bt.plot())
+bt.plot()
 
 
 st.write("最適化")
 st.write(output2)
 
+
+'''
+writer = csv.writer(output)
+file = open('output1.csv', 'w')
+file.writelines(output)
+file.close()
+
+'''
 
 
 
